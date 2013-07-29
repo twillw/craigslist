@@ -1,0 +1,4 @@
+<% @posts.each do |post| %>
+<div><%= link_to post.title, post_path(post) %></div>
+<div><%= post.body %></div>
+<% end %>
