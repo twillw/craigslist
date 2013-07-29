@@ -5,9 +5,9 @@ class UsersControllerTest < ActionController::TestCase
   setup do
   	@user = users(:one)
   	@update = {
-  	    name: 		  'Ronald Victorino'
-  		email: 		  'ronaldvictorino@gmail.com'
-  		password: 	  'password'
+  	    name: 		  'Ronald Victorino',
+  		email: 		  'ronaldvictorino@gmail.com',
+  		password: 	  'password',
   		phone_number: '(416)457-9037'
   	}
   end
@@ -20,7 +20,6 @@ class UsersControllerTest < ActionController::TestCase
 
   #create
   test "should create a new user" do
-    skip
     post :create
     assert_response :success
     assert_difference('User.count') do
@@ -31,6 +30,7 @@ class UsersControllerTest < ActionController::TestCase
 
   #show
   test "should show user" do
+  	skip
     get :show, id: @user
     assert_response :success
     #write a test that ensures that all of their ads are up?
@@ -38,18 +38,21 @@ class UsersControllerTest < ActionController::TestCase
 
   #edit
   test "should get edit" do
+  	skip
   	get :edit, id: @user
   	assert_response :success
   end
 
   #update
   test "should update user" do
+  	skip
   	patch :update, id: @user, user: @update
   	assert_redirected_to user_path(assigns(:user))
   end
 
   #should be able to destroy your profile
   test "should destroy user" do
+  	skip
     assert_difference('User.count', -1) do
       delete :destroy, id: @user
     end
@@ -58,6 +61,7 @@ class UsersControllerTest < ActionController::TestCase
 
   #should not create or update user with bad data
 	  test "should not be able to create user with bad data" do
+	  	skip
 	    assert @user[:name] != nil
 	    assert @user[:email] != nil
 	    assert @user[:password] != nil
@@ -65,6 +69,7 @@ class UsersControllerTest < ActionController::TestCase
 	  end
 
 	  test "should not be able to update user info w/ bad data" do
+	  	skip
 	    @update[:name] = nil
 	    patch :update, id: @user, user: @update
 	    assert_response :error

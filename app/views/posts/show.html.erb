@@ -1,0 +1,26 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Description</strong>
+  <%= @post.body %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @post.price %>
+</p>
+
+<p>
+  <strong>location</strong>
+  <%= @post.location %>
+</p>
+
+<%= link_to 'edit', edit_post_path(@post) %>
+<%= link_to 'back', post_path %>
