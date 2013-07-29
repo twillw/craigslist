@@ -10,8 +10,14 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params) 
-    redirect_to login_path
+    if @user.save
+      redirect_to login_path, flash: { notice: "You've successfully
+      created a new user. Please sign in." }
+    else
+      redirect_to new_user_path, flash: { notice: @user.errors.full_messages } 
+    end
   end
+
 
 
 

@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20130729172845) do
   create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "body"
-    t.decimal  "price",      precision: 8, scale: 2
+    t.decimal  "price"
     t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(post_params)
     if @post.save
-      redirect_to post_path, notice: 'Post was successfully created'
+      redirect_to post_path(@post), notice: 'Post was successfully created'
     else
       render action: 'edit' 
     end 

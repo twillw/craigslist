@@ -6,9 +6,13 @@ class LoginController < ApplicationController
 
   def create_session
     user = User.find_by(name: params[:user][:name]) 
-    if user 
+    password = User.find_by(password: params[:user][:password])
+    if user && password
       session[:user_id] = user.id
       redirect_to user_path(user)
+    elsif !user || !password
+      redirect_to login_path notice: "You've entered invalid
+      credentials. Please try again."
     else
       redirect_to new_user_path
     end
