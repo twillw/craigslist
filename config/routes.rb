@@ -3,6 +3,9 @@ Craigslist::Application.routes.draw do
 
   resources :users
 
+  get '/login', to: 'login#new_session'
+  post '/login', to: 'login#create_session'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

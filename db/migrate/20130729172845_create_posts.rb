@@ -3,7 +3,7 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :title
       t.text :body
-      t.decimal :price
+      t.decimal :price, precision: 8, scale: 2
       t.string :location
 
       t.timestamps

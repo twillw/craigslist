@@ -1,0 +1,27 @@
+<h1>Create a new User!</h1>
+
+<%= form_for @user do |f| %>
+
+<div>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+
+<div>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+</div>
+
+<div>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+</div>
+
+<div>
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+</div>
+
+  <%= f.submit :class => 'btn btn-success' %>
+
+  <% end %>
