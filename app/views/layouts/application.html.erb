@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Craigslist</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+  <title>Depot</title>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %> 
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %> 
+  <%= csrf_meta_tags %> 
 </head>
-<body>
+  <body class='<%= controller.controller_name %>'>
+
+  <!--Navbar div -->
+<div class="navbar">
+  <a class="navbar-brand" href="#"><strong><em>Craigslist App</em></strong></a>
+  <ul class="nav navbar-nav">
+    <li class="active"><a href="posts#index">Home</a></li>
+    <li><a href="#">Link</a></li>
+    <li><a href="#">Link</a></li>
+  </ul>
+  <form class="navbar-form pull-right">
+  <input type="text" class="form-control" style="width: 200px;" placeholder="E-mail">
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</div>
 
 <% if flash[:notice] %>
   <%= notice %>
