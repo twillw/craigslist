@@ -29,3 +29,7 @@ Post.create!(title: 'Used Macbook',
     %{Meant for a good HackerYou student.},
   price: 300.00,
   location: 'Ottawa')
+
+City.allowed_types.each do |x|
+  City.create!(name: "#{x}")
+end

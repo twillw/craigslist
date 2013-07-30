@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(post_params)
     if @post.save
+      @post.city = @current_city
       redirect_to post_path(@post), flash: { notice: 'Post was successfully created' }
     else
       redirect_to new_post_path, flash: { notice: @post.errors.full_messages } 

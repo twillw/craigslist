@@ -1,4 +1,6 @@
 Craigslist::Application.routes.draw do
+  resources :cities
+
   resources :posts
 
   resources :users
@@ -10,7 +12,7 @@ Craigslist::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'posts#index'
+  root 'cities#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
