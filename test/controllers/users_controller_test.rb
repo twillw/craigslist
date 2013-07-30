@@ -3,13 +3,16 @@ require 'minitest/pride'
 
 class UsersControllerTest < ActionController::TestCase
   setup do
-  	@user = users(:one)
   	@update = {
   	    name: 		  'Ronald Victorino',
-  		email: 		  'ronaldvictorino@gmail.com',
+  	    email: 		  'ronaldvictorino@gmail.com',
   		password: 	  'password',
   		phone_number: '(416)457-9037'
   	}
+  end
+
+  def login_as(user)
+    session[:user_id] = user
   end
 
   #new
@@ -20,43 +23,41 @@ class UsersControllerTest < ActionController::TestCase
 
   #create
   test "should create a new user" do
-    post :create
-    assert_response :success
     assert_difference('User.count') do
       post :create, user: @update
     end
-    assert_redirect_to user_path(assigns(:user))
+    assert_redirected_to login_path
   end
 
   #show
   test "should show user" do
-  	skip
-    get :show, id: @user
+    login_as(users(:one))
+    get :show, id: users(:one)
     assert_response :success
     #write a test that ensures that all of their ads are up?
   end
 
   #edit
   test "should get edit" do
-  	skip
-  	get :edit, id: @user
+      login_as(users(:one))
+  	get :edit, id: users(:one)
   	assert_response :success
   end
 
   #update
   test "should update user" do
-  	skip
-  	patch :update, id: @user, user: @update
-  	assert_redirected_to user_path(assigns(:user))
+      login_as(users(:one))
+  	patch :update, id: users(:one), user: @update
+  	assert_redirected_to user_path(users(:one))
   end
 
   #should be able to destroy your profile
   test "should destroy user" do
-  	skip
+    login_as(users(:one))
     assert_difference('User.count', -1) do
-      delete :destroy, id: @user
+      delete :destroy, id: users(:one)
     end
-    assert_redirected_to users_path
+    assert_redirected_to login_path
   end
 
   #should not create or update user with bad data
