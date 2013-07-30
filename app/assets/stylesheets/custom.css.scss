@@ -1,1 +1,16 @@
 @import url("bootstrap_v3.css");
+
+.row {
+	margin-left: 15px;
+}
+
+.col-lg-4 {
+	-webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+	border: 1px solid #000000;
+	width: 32%;
+	margin-right: 15px;
+	margin-bottom: 15px;
+}
