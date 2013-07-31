@@ -2,7 +2,7 @@
   <% @cities.each do |city| %>
 		<div class="col-lg-4">
 			<center><h1>
-			  <%= link_to city.name, city_path(city) %>
+			  <%= link_to city.name, set_city_path(city) %>
 			</center></h1>
 	  </div>
 	<% end %>

@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :check_current_city
+  # :check_current_subcategory
 
   def index
   	@posts = Post.all
@@ -13,6 +14,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(post_params)
     @post.city = @current_city
+    @post.subcategory = Subcategory.find(session[:subcategory_id])
     if @post.save
       redirect_to post_path(@post), flash: { notice: 'Post was successfully created' }
     else
@@ -45,6 +47,6 @@ class PostsController < ApplicationController
 
   #never allow scary parameters from the internet
   def post_params
-    params.require(:post).permit(:title, :body, :price, :location)
+    params.require(:post).permit(:title, :body, :price, :location, :city_id, :subcategory_id)
   end
 end

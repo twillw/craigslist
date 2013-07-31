@@ -1,0 +1,11 @@
+<h1>Posts belonging to <%= "#{@subcategory.name}" %></h1>
+
+<% @posts.each do |post| %>
+	<ul>
+		<li>
+			<%= link_to post.title, post_path(post) %>
+		</li>
+	</ul>
+<% end %>
+
+<%= link_to "Create a New Post under #{@subcategory.name}", new_post_path %> 

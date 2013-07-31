@@ -11,6 +11,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # def check_current_subcategory
+  #   if session[:subcategory_id]
+  #     @current_subcategory = Subcategory.find(session[:subcategory_id])
+  #   end
+  # end
+
   def check_user_login
     if session[:user_id]
       @current_user = User.find(session[:user_id])

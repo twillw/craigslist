@@ -1,5 +1,11 @@
 Craigslist::Application.routes.draw do
+  resources :subcategories
+
+  resources :categories
+
   resources :cities
+
+  get '/cities/set_city/:id', to: 'cities#setup_session_for_city', as: 'set_city'
 
   resources :posts
 

@@ -1,0 +1,7 @@
+<h1>Select your Category</h2>
+
+<% @categories.each do |category| %>
+	<ul><li>
+		<%= link_to category.name, category_path(category) %>
+	</li></ul>
+<% end %>

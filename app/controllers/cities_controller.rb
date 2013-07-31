@@ -1,12 +1,14 @@
 class CitiesController < ApplicationController
 
 	def index
-    @cities = City.all
+    	# reset_session
+    	@cities = City.all
 	end
 
-	def show
+	def setup_session_for_city
 		@city = City.find(params[:id])
 		session[:city_id] = @city.id
-		@city_posts = @city.posts
+		# @city_posts = @city.posts
+		redirect_to categories_path
 	end
 end

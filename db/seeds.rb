@@ -5,6 +5,24 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+City.delete_all
+City.allowed_types.each do |x|
+  City.create!(name: "#{x}")
+end
+
+Category.delete_all
+Category.allowed_types.each do |category|
+  Category.create!(name: "#{category}")
+end
+
+Subcategory.delete_all
+Subcategory.create(name:'Computer', category_id: Category.find_by(name: 'For Sale').id)
+Subcategory.create(name: 'Books', category_id: Category.find_by(name: 'For Sale').id)
+Subcategory.create(name: 'Programming', category_id: Category.find_by(name: 'Jobs').id)
+Subcategory.create(name: 'Cleaning', category_id: Category.find_by(name: 'Jobs').id)
+Subcategory.create(name: 'Houses', category_id: Category.find_by(name: 'Housing').id)
+Subcategory.create(name: 'Apartment', category_id: Category.find_by(name: 'Housing').id)
+
 Post.delete_all
 Post.create!(title: 'Rideshare from Toronto to Ottawa',
   body: 
@@ -14,7 +32,9 @@ Post.create!(title: 'Rideshare from Toronto to Ottawa',
       not shower.},
   price: 30.00,
   location: 'Ottawa',
-  city_id:1)
+  city_id: City.find_by(name: 'Ottawa').id,
+  subcategory_id: Subcategory.find_by(name: 'Computer').id
+  )
 # . . .
 Post.create!(title: 'Selling Best Ruby on Rails Textbook',
   body: 
@@ -23,15 +43,16 @@ Post.create!(title: 'Selling Best Ruby on Rails Textbook',
       in your mind.},
   price: 1000000.00,
   location: 'The Moon',
-  city_id:1)
+  city_id:City.find_by(name: 'Toronto').id,
+  subcategory_id: Subcategory.find_by(name: 'Books').id
+  )
 # . . .
 
 Post.create!(title: 'Used Macbook',
   body: 
     %{Meant for a good HackerYou student.},
   price: 300.00,
-  location: 'Ottawa')
-
-City.allowed_types.each do |x|
-  City.create!(name: "#{x}")
-end
+  location: 'Ottawa',
+  city_id:City.find_by(name: 'Toronto').id,
+  subcategory_id: Subcategory.find_by(name: 'Computer').id
+)

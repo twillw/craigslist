@@ -1,0 +1,9 @@
+<h1>Sub-Categories belonging to <%= "#{@category.name}" %></h1>
+
+<% @subcategories.each do |subcategory| %>
+	<ul>
+		<li>
+			<%= link_to subcategory.name, subcategory_path(subcategory) %>
+		</li>
+	</ul>
+<% end %>
