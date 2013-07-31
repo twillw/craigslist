@@ -1,3 +1,4 @@
+<% @cities.sort! %>
 <div class="row">
   <% @cities.each do |city| %>
 		<div class="col-lg-4">
@@ -7,5 +8,3 @@
 	  </div>
 	<% end %>
 </div>
-
-<%= @current_city %>
