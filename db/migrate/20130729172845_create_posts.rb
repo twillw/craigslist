@@ -5,7 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.text :body
       t.decimal :price, precision: 8, scale: 2
       t.string :location
-      t.references :city
+      t.references :city, index: true
       
       t.timestamps
     end

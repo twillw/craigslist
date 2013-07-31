@@ -13,7 +13,8 @@ Post.create!(title: 'Rideshare from Toronto to Ottawa',
       prior to trip. Driver has the right to refuse entry to those who do 
       not shower.},
   price: 30.00,
-  location: 'Ottawa')
+  location: 'Ottawa',
+  city_id:1)
 # . . .
 Post.create!(title: 'Selling Best Ruby on Rails Textbook',
   body: 
@@ -21,7 +22,8 @@ Post.create!(title: 'Selling Best Ruby on Rails Textbook',
       mind. Literally programs things for you by implanting Rails knowledge 
       in your mind.},
   price: 1000000.00,
-  location: 'The Moon')
+  location: 'The Moon',
+  city_id:1)
 # . . .
 
 Post.create!(title: 'Used Macbook',
