@@ -1,3 +1,12 @@
-<% @city_posts.each do |post| %>
-<div><%= link_to post.title, post_path(post) %></div>
-<% end %>
+<div class="jumbotron">
+	<h1><%= @city.name %></h1>
+</div>
+<div class="row">
+  <% @city_posts.each do |post| %>
+		<div class="col-lg-4">
+			<%= link_to post.title, post_path(post) %>: <%= post.location %>
+	    </br><%= number_to_currency(post.price) %>
+	    </br><%= post.body %>
+	  </div>
+	<% end %>
+</div>
