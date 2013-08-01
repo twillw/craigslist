@@ -1,14 +1,13 @@
 @import url("bootstrap_v3.css");
 
+body { padding-top: 55px; }
+
 .row {
 	margin-left: 5px;
 }
 
 .col-lg-4 {
-	-webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
+	border-radius: 4px;
 	border: 2px solid #B4DDFF;
 	padding: 10px;
 	width: 32%;
@@ -17,22 +16,11 @@
 	background-color: #FFF;
 }
 
-.col-lg-2 {
-	-webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-	border: 2px solid #1989E5;
-	margin-right: 5px;
-	margin-bottom: 5px;
-	background-color: #1C98FF;
-	width: 16.2%;
-}
-
 .navbar {
-	background-color: #105894;
+	background-color: #0D4473;
 	border: 1px solid #fff;
 	margin-bottom: 5px;
+	font-family: Engagement;
 }
 
 .navbar-nav > .active > a {
@@ -45,15 +33,23 @@
 
 .navbar-brand {
 	color: #FFF;
-	font-family: Aguafina;
+}
+
+.col-lg-2 {
+	border-radius: 4px;
+	border: 2px solid #1989E5;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	background-color: #1C98FF;
+	width: 16.1%;
 }
 
 .col-lg-2 a {
 	color: #FFF;
+	font-family: Engagement;
 }
 
 .jumbotron {
-	background-image: url('Toronto.jpg');
 	background-size: 110%;
 	background-position: 0px -40px;
 	margin-bottom: 15px;
@@ -61,4 +57,48 @@
 	border-top: 1px solid #000;
 	border-radius: 0px;
 	height:200px;
+}
+
+.bs-masthead {
+  
+  padding-top: 150px;
+  padding-bottom: 150px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  margin-left: 1px;
+  margin-right: 1px;
+  margin-bottom: 5px;
+}
+
+.bs-masthead h1 {
+  font-size: 100px;
+  text-align: center;
+  font-family: Engagement;
+}
+
+.bs-masthead h2 {
+	font-size:40px;
+	text-align: center;
+	font-family: Engagement;
+}
+
+.col-lg-12 {
+	border: 1px solid #1989E5; 
+	background-color: #1C98FF; 
+	border-radius: 4px;  
+	margin-bottom: 500px;
+	width: 99.9%;
+	margin-left: 1px;
+	margin-right: 1px;
+}
+
+.col-lg-12 h5, .col-lg-12 a {
+	text-align: center;
+	font-size: 14px;
+	font-family: Engagement;
+	color: #fff;
+}
+
+.col-lg-12 a:hover {
+	color: #0D4473;
 }
