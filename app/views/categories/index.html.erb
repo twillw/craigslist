@@ -2,10 +2,19 @@
   <h1 style="font-family: Aguafina;"><%= @current_city.name %></h1>
 </div>
 
-<h1>Select your Category</h2>
+<h1> Select your category/subcategory</h1>
 
 <% @categories.each do |category| %>
-	<ul><li>
-		<%= link_to category.name, category_path(category) %>
-	</li></ul>
+	
+	<%= category.name %>
+	
+	<% subcategories = @subcategories.where(category_id: category.id).all %>
+
+	<% subcategories.each do |subcategory| %>
+		<ul>
+			<li>
+				<%= link_to subcategory.name, subcategory_path(subcategory) %>
+			</li>
+		</ul>
+	<% end %>
 <% end %>
