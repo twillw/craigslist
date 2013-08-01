@@ -1,9 +1,16 @@
-<h1>Sub-Categories belonging to <%= "#{@category.name}" %></h1>
+<!-- <h1>Sub-Categories belonging to <%= "#{@category.name}" %></h1>
 
-<% @subcategories.each do |subcategory| %>
-	<ul>
-		<li>
-			<%= link_to subcategory.name, subcategory_path(subcategory) %>
-		</li>
-	</ul>
-<% end %>
+<% @categories.each do |category| %>
+	
+	<%= category.name %>
+	
+	<% subcategories = @subcategory.where(category_id: category.id).all %>
+
+	<% subcategories.each do |subcategory| %>
+		<ul>
+			<li>
+				<%= link_to subcategory.name, subcategory_path(subcategory) %>
+			</li>
+		</ul>
+	<% end %>
+<% end %> -->
