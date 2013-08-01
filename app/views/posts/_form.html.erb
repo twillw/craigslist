@@ -1,8 +1,13 @@
-<%= form_for(@post) do |f| %>
+<%= form_for @post, html: { multipart: true } do |f| %>
 
   <div>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :photo %><br>
+    <%= f.file_field :photo %>
   </div>
   <div>
     <%= f.label :body %><br>

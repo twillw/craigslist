@@ -47,6 +47,6 @@ class PostsController < ApplicationController
 
   #never allow scary parameters from the internet
   def post_params
-    params.require(:post).permit(:title, :body, :price, :location, :city_id, :subcategory_id)
+    params.require(:post).permit(:title, :body, :price, :photo, :location, :city_id, :subcategory_id)
   end
 end

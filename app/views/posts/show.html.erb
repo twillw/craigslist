@@ -5,6 +5,7 @@
   <%= @post.body %>
   </br>
 	</br>
+  <%= image_tag(@post.photo_url) if @post.photo %>
   <strong>Price:</strong> <%= @post.price %>
 	</br>
 	</br>
