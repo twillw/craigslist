@@ -1,23 +1,15 @@
-
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>Description</strong>
+<div class="jumbotron">
+  <h1>Title: <%= @post.title %> </h1>
+	</br>
+	</br>
   <%= @post.body %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @post.price %>
-</p>
-
-<p>
-  <strong>location</strong>
-  <%= @post.location %>
-</p>
+  </br>
+	</br>
+  <strong>Price:</strong> <%= @post.price %>
+	</br>
+	</br>
+  <strong>Location:</strong>  <%= @post.location %>
+</div>
 
 <%= link_to 'edit', edit_post_path(@post) %>
 <%= link_to 'back', posts_path %>

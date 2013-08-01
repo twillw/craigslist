@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 City.delete_all
 City.allowed_types.each do |x|
-  City.create!(name: "#{x}")
+  City.create!(name: "#{x}", image_url: "#{x}.jpg")
 end
 
 Category.delete_all

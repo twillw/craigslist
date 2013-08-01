@@ -1,8 +1,8 @@
 <% @cities.sort! %>
 <div class="row">
   <% @cities.each do |city| %>
-		<div class="col-lg-4">
-			<center><h1>
+		<div class="col-lg-2">
+			<center><h3 style="line-height: 1;">
 			  <%= link_to city.name, set_city_path(city) %>
 			</center></h1>
 	  </div>
