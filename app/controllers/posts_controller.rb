@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :check_current_city
+  before_action :check_current_city, :check_user_login, except: [:index]
   # :check_current_subcategory
 
   def index
@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
+    @post.user = @current_user
     @post.city = @current_city
     @post.subcategory = Subcategory.find(session[:subcategory_id])
     if @post.save
@@ -23,6 +24,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
 
   def update
