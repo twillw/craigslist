@@ -1,20 +1,26 @@
 <div class="jumbotron" style="background-image:url('/assets/<%= @current_city.image_url %>')">
-  <h1 style="font-family: Aguafina;"><%= @current_city.name %></h1>
+  <h1 style="font-family: Engagement;"><%= @current_city.name %></h1>
 </div>
 
-<h1> Select your category/subcategory</h1>
+<div class=""><h1 style="font-family: Engagement;"> Select your Category/Subcategory</h1>
 
-<% @categories.each do |category| %>
-	
-	<%= category.name %>
-	
-	<% subcategories = @subcategories.where(category_id: category.id).all %>
-
-	<% subcategories.each do |subcategory| %>
-		<ul>
-			<li>
-				<%= link_to subcategory.name, subcategory_path(subcategory) %>
-			</li>
-		</ul>
+<div class="row">
+	<% @categories.each do |category| %>
+		<div class="col-lg-4 view view-first" style="background-image:url('/assets/<%= category.name %>.jpg'); height: 200px;">
+			<div class="mask">
+			  <h2><%= category.name %></h2>
+			  <% if category.name == 'For Sale' %>
+		  	  <p>Check out what's for sale in your local area!</p>
+		  	<% elsif category.name == 'Jobs' %>
+		  	  <p>Looking for a job? Reply to job postings in your local area today!</p>
+		  	<% elsif category.name == 'Housing' %>
+		  	  <p>Find great places to live in and around the city!</p>
+		  	<% end %>
+			  <% subcategories = @subcategories.where(category_id: category.id).all %>
+			  <% subcategories.each do |subcategory| %>
+				  <%= link_to subcategory.name, subcategory_path(subcategory) %>
+		  <% end %>
+		  </div>
+		</div>
 	<% end %>
-<% end %>
+</div>

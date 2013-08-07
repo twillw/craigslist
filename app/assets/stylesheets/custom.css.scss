@@ -1,6 +1,8 @@
 @import url("bootstrap_v3.css");
 
-body { padding-top: 55px; }
+body { 
+    padding-top: 55px; 
+}
 
 .row {
 	margin-left: 5px;
@@ -49,12 +51,13 @@ body { padding-top: 55px; }
 	border: 2px solid #1989E5;
 	margin-right: 5px;
 	margin-bottom: 5px;
-	background-color: #1C98FF;
+	background-color: #fff;
 	width: 16.1%;
+    padding: 0px;
 }
 
 .col-lg-2 a {
-	color: #FFF;
+	color: #000;
 	font-family: Engagement;
 }
 
@@ -82,7 +85,7 @@ body { padding-top: 55px; }
   margin-left: 1px;
   margin-right: 1px;
   margin-bottom: 5px;
-  background-image: url('http://kxoj.com/wp-content/uploads/Blue-Rays-Worship-Backgrounds.png');
+  background-image: url('header-background.png');
   background-size: 100%;
 }
 
@@ -134,8 +137,15 @@ body { padding-top: 55px; }
 	width: 32.7%;
 	margin-right: 5px;
 	margin-bottom: 15px;
-	background-image: url('about-background.jpg');
+	background-image: url();
 	background-size: 100%;
+    height: 540px;
+    padding: 0px;
+}
+
+.col-lg-4 p {
+  font-family: Georgia;
+  font-style: italic;
 }
 
 .col-lg-4 h3 {
@@ -146,8 +156,7 @@ body { padding-top: 55px; }
 
 .col-lg-4 h4, .col-lg-4 a {
 	font-family: Engagement;
-	font-size: 24px;
-	color: #FFF;
+	font-size: 16px;
 }
 
 .col-lg-4 h4 a:hover {
@@ -165,36 +174,35 @@ body { padding-top: 55px; }
 }
 
 .view {
-    width: 300px;
-    height: 200px;
-    margin: 10px;
     float: left;
-    border: 10px solid #fff;
     overflow: hidden;
     position: relative;
     text-align: center;
     box-shadow: 1px 1px 2px #e6e6e6;
-    cursor: default;
-    background: #fff url(../images/bgimg.jpg) no-repeat center center
+    background-size:100%;
+    border: 10px solid #fff;
+    border-radius: 0px;
 }
 .view .mask, .view .content {
-    width: 300px;
-    height: 200px;
+    width: 100%;
+    height:100%;
     position: absolute;
     overflow: hidden;
     top: 0;
-    left: 0
+    left: 0;
+
 }
 .view img {
     display: block;
-    position: relative
+    position: relative;
 }
 .view h2 {
     text-transform: uppercase;
     color: #fff;
     text-align: center;
     position: relative;
-    font-size: 17px;
+    font-size: 20px;
+    font-family: Engaged;
     padding: 10px;
     background: rgba(0, 0, 0, 0.8);
     margin: 20px 0 0 0
@@ -202,31 +210,36 @@ body { padding-top: 55px; }
 .view p {
     font-family: Georgia, serif;
     font-style: italic;
-    font-size: 12px;
+    font-size: 14px;
     position: relative;
     color: #fff;
     padding: 10px 20px 20px;
-    text-align: center
+    text-align: center;
 }
-.view a.info {
+.view a {
     display: inline-block;
     text-decoration: none;
-    padding: 7px 14px;
+    padding: 5px;
     background: #000;
     color: #fff;
-    text-transform: uppercase;
-    box-shadow: 0 0 1px #000
+    box-shadow: 0 0 1px #000;
+    font-size: 14px;
 }
-.view a.info:hover {
+.view a:hover {
     box-shadow: 0 0 5px #000
 }
 
 .view-first img { 
     -webkit-transition: all 0.2s linear;
 }
+
+.view-first:hover img { 
+    -webkit-transform: scale(1.1);
+} 
+
 .view-first .mask {
     opacity: 0;
-    background-color: rgba(219,127,8, 0.7); 
+    background-color: rgba(53,126,189, 0.7); 
     -webkit-transition: all 0.4s ease-in-out;
 }
 .view-first h2 {
@@ -239,25 +252,27 @@ body { padding-top: 55px; }
     opacity: 0;
     -webkit-transition: all 0.2s linear;
 }
-.view-first a.info{
+.view-first a{
     opacity: 0;
     -webkit-transition: all 0.2s ease-in-out;
 }
-.view-first:hover img { 
-    -webkit-transform: scale(1.1);
-} 
 .view-first:hover .mask { 
     opacity: 1;
 }
 .view-first:hover h2,
 .view-first:hover p,
-.view-first:hover a.info {
+.view-first:hover a {
     opacity: 1;
     -webkit-transform: translateY(0px);
+}
+.view-first:hover h1 {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+    -webkit-transition: all 0.2s ease-in-out;
 }
 .view-first:hover p {
     -webkit-transition-delay: 0.1s;
 }
-.view-first:hover a.info {
+.view-first:hover a {
     -webkit-transition-delay: 0.2s;
 }

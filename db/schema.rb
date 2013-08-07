@@ -31,15 +31,14 @@ ActiveRecord::Schema.define(version: 20130806191836) do
     t.text     "body"
     t.decimal  "price",          precision: 8, scale: 2
     t.string   "location"
-    t.integer  "city_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "city_id"
     t.integer  "subcategory_id"
     t.string   "photo"
     t.integer  "user_id"
   end
 
-  add_index "posts", ["city_id"], name: "index_posts_on_city_id"
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "subcategories", force: true do |t|
