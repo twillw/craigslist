@@ -1,25 +1,21 @@
-<div class="jumbotron">
-  <h1>Title: <%= @post.title %> </h1>
-  
 <div class="row">
-  <div class="col-lg-4", id="post_photo">
-    <div>
-      <%= image_tag(@post.photo_url) if @post.photo %>
+  <div class="col-lg-12 view view-first" style="height:400px; width: 400px; margin-left: 470px; padding: 30px;">
+    <h1 style="color: #fff;"><%= @post.title %></h1></br>
+    <%= image_tag(@post.photo_url) if @post.photo %>
+    <div class="mask">
+      <h2><%= @post.title %></h2>
+      <p><b><%= @post.location %></b>
+      </br><%= number_to_currency(@post.price) %>
+      </br><%= @post.body %></p>
+      <center>
+        <%= link_to 'edit', edit_post_path(@post)  %>
+        <%= link_to 'back', posts_path %>
+      </center>
     </div>
-    <div id="post_price">
-      <strong>Price:</strong> <%= number_to_currency(@post.price)%>
-    </div>
-  </div>
-  <div class="col-lg-8", id="post_content">
-    <%= @post.body %>
-  <div id="post_location">
-    <strong>Location:</strong> <%= @post.location %>
-  </div>
   </div>
 </div>
 
-
-<div>
-  <%= link_to 'edit', edit_post_path(@post) %>
-  <%= link_to 'back', posts_path %>
-</div>
+<center>
+  <%= link_to 'edit', edit_post_path(@post), class:"btn btn-default" %>
+  <%= link_to 'back', posts_path, class:"btn btn-default" %>
+</center>

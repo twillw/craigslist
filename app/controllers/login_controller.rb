@@ -9,7 +9,7 @@ class LoginController < ApplicationController
     
     if user && user.authenticate(params[:user][:password])
       session[:user_id] = user.id
-      redirect_to user_path(user)
+      redirect_to cities_path
     elsif !user || !password
       redirect_to login_path notice: "You've entered invalid
       credentials. Please try again."

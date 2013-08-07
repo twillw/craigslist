@@ -1,32 +1,41 @@
-<h1>Create a new User!</h1>
+<div class="col-lg-4" style="height:400px; margin-left: 454px; padding: 30px;">
+  <center>
+  <h1>Create a New User!</h1>
+  </center>
 
-<%= form_for @user do |f| %>
+  <%= form_for @user do |f| %>
 
-<div>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-</div>
+    <div class="form-format">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
 
-<div>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-</div>
+    <div class="form-format">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
 
-<div>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-</div>
+    <div class="form-format">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div>
 
-<div>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-</div>
+    <div class="form-format">
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    </div>
 
-<div>
-  <%= f.label :phone_number %>
-  <%= f.text_field :phone_number %>
-</div>
+    <div class="form-format">
+      <%= f.label :phone_number %>
+      <%= f.text_field :phone_number %>
+    </div>
 
-  <%= f.submit :class => 'btn btn-success' %>
+  </br>
+
+  <center>
+    <%= f.submit :class => 'btn btn-success' %>
+  </center>
 
   <% end %>
+  </center>
+</div>

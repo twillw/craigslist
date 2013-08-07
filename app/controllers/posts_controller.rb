@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :check_current_city, :check_user_login, except: [:index]
+  before_action :check_current_city, :check_user_login, except: [:index, :show]
   # :check_current_subcategory
 
   def index
@@ -28,8 +28,9 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to post_path, notice: 'Post was successfully updated.'
+      redirect_to post_path(@post), notice: 'Post was successfully updated.'
   	else
   	  render action: 'edit'
   	end

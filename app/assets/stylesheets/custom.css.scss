@@ -3,9 +3,14 @@
 body { 
     padding-top: 55px; 
 }
+;
+h1, h2, h3, h4, h5 {
+    font-family: Helvetica, Helvetica Neue;
+}
 
 .row {
-	margin-left: 5px;
+	margin-left: 0px;
+    margin-right: 0px;
 }
 
 #post_photo {
@@ -23,7 +28,7 @@ body {
 	background-color: #0D4473;
 	border: 1px solid #fff;
 	margin-bottom: 5px;
-	font-family: Engagement;
+	font-family: Helvetica, Helvetica Neue;
 }
 
 .navbar-nav > .active > a {
@@ -48,7 +53,7 @@ body {
 
 .col-lg-2 {
 	border-radius: 4px;
-	border: 2px solid #1989E5;
+	border: 1px solid #357ebd;
 	margin-right: 5px;
 	margin-bottom: 5px;
 	background-color: #fff;
@@ -58,7 +63,7 @@ body {
 
 .col-lg-2 a {
 	color: #000;
-	font-family: Engagement;
+	font-family: Helvetica, Helvetica Neue;
 }
 
 .col-lg-2 a:hover {
@@ -73,7 +78,7 @@ body {
 	border-top: 1px solid #000;
 	border-radius: 0px;
 	height:200px;
-	font-family: Engagement;
+	font-family: Helvetica, Helvetica Neue;
 	background-color: #fff;
 }
 
@@ -92,29 +97,31 @@ body {
 .bs-masthead h1 {
   font-size: 100px;
   text-align: center;
-  font-family: Engagement;
 }
 
 .bs-masthead h2 {
 	font-size:40px;
 	text-align: center;
-	font-family: Engagement;
+	font-family: Helvetica, Helvetica Neue;
 }
 
 .col-lg-12 {
-	border: 1px solid #1989E5; 
-	background-color: #1C98FF; 
-	border-radius: 4px;  
+	border: 1px solid #3071a9; 
+	background-color: #357ebd;   
 	margin-bottom: 5px;
 	width: 99.9%;
 	margin-left: 1px;
 	margin-right: 1px;
 }
 
+.col-lg-12 h2 {
+    text-align: center;
+    color: #fff;
+}
+
 .col-lg-12 h5, .col-lg-12 a {
 	text-align: center;
 	font-size: 14px;
-	font-family: Engagement;
 	color: #fff;
 }
 
@@ -135,7 +142,7 @@ body {
 	border: 1px solid #000;
 	padding: 30px;
 	width: 32.7%;
-	margin-right: 5px;
+	margin-right: 0px;
 	margin-bottom: 15px;
 	background-image: url();
 	background-size: 100%;
@@ -149,18 +156,18 @@ body {
 }
 
 .col-lg-4 h3 {
-	font-family: Engagement;
+	font-family: Helvetica, Helvetica Neue;
 	font-size: 32px;
 	color: #0D4473;
 }
 
 .col-lg-4 h4, .col-lg-4 a {
-	font-family: Engagement;
+	font-family: Helvetica, Helvetica Neue;
 	font-size: 16px;
 }
 
 .col-lg-4 h4 a:hover {
-	font-family: Engagement;
+	font-family: Helvetica, Helvetica Neue;
 	font-size: 24px;
 	color: #0D4473;
 }
@@ -202,7 +209,7 @@ body {
     text-align: center;
     position: relative;
     font-size: 20px;
-    font-family: Engaged;
+    font-family: Helvetica, Helvetica Neue;
     padding: 10px;
     background: rgba(0, 0, 0, 0.8);
     margin: 20px 0 0 0
@@ -275,4 +282,9 @@ body {
 }
 .view-first:hover a {
     -webkit-transition-delay: 0.2s;
+}
+
+.form-format {
+    text-align:right; 
+    margin-right: 50px;
 }

@@ -1,7 +1,7 @@
 <div class="row">
   <% @posts.each do |post| %>
 		<div class="col-lg-4 view view-first" style="padding: 10px; height: 250px;">
-			<h1 style="font-family: Engagement;"><%= post.title %></h1>
+			<h1><%= post.title %></h1>
 			<div class="mask">
 				<h2><%= link_to post.title, post_path(post) %></h2>
 				<p><b><%= post.location %></b>

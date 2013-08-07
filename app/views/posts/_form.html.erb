@@ -1,27 +1,35 @@
-<%= form_for @post, html: { multipart: true } do |f| %>
+<div class="col-lg-4" style="height:500px; width:400px; margin-left: 454px; padding: 30px;">
+  <%= form_for @post, html: { multipart: true } do |f| %>
 
-  <div>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
+    <div class="form-format">
+      <%= f.label :title %>
+      <%= f.text_field :title, style:"width: 200px;" %>
+    </div>
 
-  <div>
-    <%= f.label :photo %><br>
-    <%= f.file_field :photo %>
-  </div>
-  <div>
-    <%= f.label :body %><br>
-    <%= f.text_area :body, rows: 6 %>
-  </div>
-  <div>
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
-  <div>
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
-  </div>
-  
-  <%= f.submit :class => 'btn btn-success' %>
+    <div class="form-format">
+      <%= f.label :photo %>
+      <%= f.file_field :photo, style:"margin-top:0px; display:inline; width: 200px;" %>
+    </div>
 
-<% end %>
+    <div class="form-format">
+      <%= f.label :body %>
+      <%= f.text_area :body, rows: 6, style:"width: 200px;" %>
+    </div>
+
+    <div class="form-format">
+      <%= f.label :price %>
+      <%= f.text_field :price, style:"width: 200px; margin-top:2px;" %>
+    </div>
+
+    <div class="form-format">
+      <%= f.label :location %>
+      <%= f.text_field :location, style:"width: 200px;" %>
+    </div>
+
+    </br>
+    <center>
+      <%= f.submit :class => 'btn btn-success' %>
+    </center>
+
+  <% end %>
+</div>
