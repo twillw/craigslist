@@ -1,4 +1,4 @@
-<div class="jumbotron" style="background-image:url('/assets/<%= @current_city.image_url %>')">
+<div class="jumbotron" style="background-image:url('<%= asset_path @current_city.image_url %>')">
   <h1><%= @current_city.name %></h1>
 </div>
 
@@ -8,7 +8,7 @@
 
 <div class="row">
 	<% @categories.each do |category| %>
-		<div class="col-lg-4 view view-first" style="background-image:url('/assets/<%= category.name %>.jpg'); height: 200px;">
+		<div class="col-lg-4 view view-first" style="background-image:url('<%= asset_path "#{category.name}.jpg" %>'); height: 200px;">
 			<div class="mask">
 			  <h2><%= category.name %></h2>
 			  <% if category.name == 'For Sale' %>
